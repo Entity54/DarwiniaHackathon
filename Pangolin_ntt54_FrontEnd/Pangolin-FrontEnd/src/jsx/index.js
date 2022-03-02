@@ -43,6 +43,7 @@ const Markup = ( { setupSpecs, portfolio, oracleData, blockChainSpecs, blockHead
             style={{ minHeight: window.screen.height - 60 }}
           >
             <Switch>
+              <Route exact path='/'> <DashboardDark setupSpecs={setupSpecs} oracleData={oracleData} blockHeader={blockHeader} accountList={accountList} /> </Route>
               <Route exact path='/dashboard-dark'> <DashboardDark setupSpecs={setupSpecs} oracleData={oracleData} blockHeader={blockHeader} accountList={accountList} /> </Route>
               <Route exact path='/portofolio'> <Portofolio  setupSpecs={setupSpecs} portfolio={portfolio} blockHeader={blockHeader} accountList={accountList}/> </Route>
               <Route exact path='/dex'> <DEX  setupSpecs={setupSpecs} portfolio={portfolio} oracleData={oracleData} blockHeader={blockHeader} accountList={accountList} /> </Route>
