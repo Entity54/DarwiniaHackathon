@@ -33,21 +33,29 @@ With an Oracle smart contract to broadcast prices, a Minter smart contract to mi
 Backend contains two parts Oracle and Minter
 <h3>Oracle</h3>
 We have deployed an Oracle smart contract
-We are running a webserver. Anyone can run a similar webserver by typing $node server.js here <b>PLACE LINK HERE<b>
+We are running a webserver. Anyone can run a similar webserver by typing $node server.js here <b>https://github.com/Entity54/DarwiniaHackathon/tree/main/Pangolin_ntt54_Oracle_backend/ntt54_Oracle_webserver/server<b>
 The webserver at initialization offers a basic front end and it reads basic information about available token data offered by coingecko api
 Webserver front end allows to approve another account address as price reporter so it can update prices in the oracle smart contract
-Automatically we have approved this address <b>SHOW ADDRESS<b> as price reporter.
+Automatically we have approved this address <b>0x563FD94f1A141a2289A5746b7A6f0bE9fB27daf0<b> as price reporter.
 The admin chooses the list of tokens from coingecko that wants the smart contract to store prices
 There are some predetermined lists and in our example we use the custom list 
 The custom list contains 114 tokens (the top 100 tokens by market cap as seen on coingecko page, excluding stable coins and adding most polkadot and kusama coins available at time of deployment)
 It needs to be emphasized that the admin can add further tokens or remove existing ones
-
+<br>
+<p> 
+<img width="2359" alt="Oracle" src="https://user-images.githubusercontent.com/42042104/156425254-6d44109a-085c-40ae-910f-f2bdc89b4ac3.png">
+</p> 
+<br>
 <h3>Minter</h3>
 The second part of our backend and scrolling down from the Oracle (on the webpage as shown on the video) we can see that the admin can click and mint any tokens being tracked by the oracle smart contract that have a default 0 address,
 Tokens are now minted to ERC20 tokens with a total supply equal to the circulating supply as published at coingecko website (if there is no reported cicrculating supply, we use the total supply and if this is not reported either we mint a large number of tokens)
 The admin of Minter can approve any account address to withdraw any and all liquidity.
 The admin of Minter is also the admin of all ERC20 tokens minted so the admin can mint , burn ERC20 tokens and also change admin of an ERC20 to another address
-
+<br>
+<p>  
+<img width="2357" alt="Minter" src="https://user-images.githubusercontent.com/42042104/156425424-3b4a2023-c7e1-4c2f-a682-52ea9c30fa24.png">
+</p> 
+<br>   
 <h2>Frontend</h2>
 The user must have chrome Metamask extension installed and logged in with a prefunded with <b>PRING</b> account to be able to pay for any transactions
 Our front end has three pages<br>
@@ -59,7 +67,19 @@ The user can also transfer any of his ERC20 tokens or <b>PRING</b> tokens to his
 <h6> DEX</h6>  
 This is where the user can use the faucet to get some stable coins in his metamask Limit is $100,000 for the lifetime of any account<br>
 Now the user can choose to swap his stable for any token he chooses from the drop down list, or if he has any tokens swap these back to stable at Oracle determined prices
-
+<br>
+<p>  
+<img width="1913" alt="Dapp_LandingPage" src="https://user-images.githubusercontent.com/42042104/156425491-19e2c69e-5679-4616-afcf-8319f2a93196.png">
+</p> 
+<br>
+<p>  
+<img width="1912" alt="Portfolio" src="https://user-images.githubusercontent.com/42042104/156425545-ee68d6c5-ea44-4cfe-ba6f-1840369900bc.png"> 
+</p> 
+<br>
+<p>  
+<img width="1909" alt="Dex" src="https://user-images.githubusercontent.com/42042104/156425582-b18697e2-f931-456d-9ef5-e0f91cc9ee67.png">
+</p> 
+<br>
 <h2>Thoughts</h2>
 <p>The Oracle webserver has few points of attack that could be the base for further expansion and improvement. Dex can also be improved much further</p>
 <p>
